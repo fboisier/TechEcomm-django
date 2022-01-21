@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -12,8 +12,8 @@
 			<main class="col-md-9">
 				<article class="card">
 					<header class="card-header">
-						<strong class="d-inline-block mr-3">Logged in as:</strong>
-						<span>{{user.full_name}}</span>
+						<span class="">Logged in as:</span>
+						<strong class="d-inline-block ml-3">{{user.full_name}}</strong>
 					</header>
 					<div class="card-body">
 						<div class="row">
@@ -30,8 +30,9 @@
 							<div class="col-md-6">
 								<div class="card" style="text-align:center;">
 									<div class="card-body">
-										<img src="{{userprofile.profile_picture.url}}" alt="User Profile Picture"
-											width="50" height="50" style="border-radius:50%;">
+										<a href="{{ userprofile.profile_picture.url }}" target="mainImage"><img
+												src="{{ userprofile.profile_picture.url }}" alt="User Profile Picture"
+												width="50" height="50" style="border-radius:50%;"></a>
 										<p class="mb-0">{{user.email}}</p>
 										<p>{{user.phone_number}}</p>
 									</div>
@@ -45,8 +46,12 @@
 			</main>
 		</div> <!-- row.// -->
 	</div>
-
-
 </section>
+
+<!-- Image Zoom -->
+<script src="{% static 'js/jquery.ez-plus.js' %}"></script>
+<script type="text/javascript">
+	$('#zoom_01').ezPlus();
+</script>
 
 {% endblock %}

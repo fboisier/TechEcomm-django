@@ -1,0 +1,35 @@
+Explicacion/Entendimiento codigo:
+
+Clases, funciones, metodos, parametros, djangoAdmin y codigo
+
+get_url method: 
+-	https://docs.djangoproject.com/en/4.0/ref/contrib/admin/
+
+¿ que es el slug ?
+-	https://www.noticias.ltda/online-marketing/sito-web/slug-seo/
+
+models.SlugField
+-	https://docs.djangoproject.com/en/4.0/ref/forms/fields/
+
+
+class Meta: 
+
+-	https://docs.djangoproject.com/en/4.0/topics/db/models/
+
+
+__init__ method: 
+
+-	https://docs.djangoproject.com/en/4.0/ref/signals/
+
+normalize_email method: 
+
+-	https://docs.djangoproject.com/en/4.0/topics/auth/customizing/
+
+AbstractBaseUser  import:
+-	https://docs.djangoproject.com/en/4.0/topics/auth/customizing/
+
+request.META.get function:
+-	https://docs.djangoproject.com/en/4.0/ref/request-response/
+
+default_token_generator function:
+-	https://docs.djangoproject.com/en/4.0/topics/auth/default/

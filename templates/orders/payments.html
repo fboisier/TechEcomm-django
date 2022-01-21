@@ -9,18 +9,19 @@
 
 		<!-- ============================ COMPONENT 1 ================================= -->
 		<h4 class="text-center mb-20">Review of your Order and Make Payment</h4>
+		<br>
 		<div class="row">
 
 			<aside class="col-lg-8">
 				<div class="card">
 					<h5 class="card-header">Billing Address</h5>
 					<div class="card-body">
-						<p class="card-text mb-0">Name: {{order.full_name}}</p>
-						<p class="card-text mb-0">Address: {{order.full_address}}</p>
-						<p class="card-text mb-0">City: {{order.city}}, State: {{order.state}}</p>
-						<p class="card-text mb-0">Country: {{order.country}}</p>
-						<p class="card-text mb-0">Email: {{order.email}}</p>
-						<p class="card-text mb-0">Phone Number: +{{order.phone}}</p>
+						<p class="card-text mb-0">Name: <h5>{{order.full_name}}</h5></p>
+						<p class="card-text mb-0">Address: <h6>{{order.full_address}}</h6></p>
+						<p class="card-text mb-0">City: <h6>{{order.city}}</h6> State: <h6>{{order.state}}</h6></p>
+						<p class="card-text mb-0">Country: <h6>{{order.country}}</h6></p>
+						<p class="card-text mb-0">Email: <h5>{{order.email}}</h5></p>
+						<p class="card-text mb-0">Phone Number: <h6>+{{order.phone}}</h6></p>
 						{% if order.order_note %}
 						<b>Order Note: </b> {{order.order_note}}
 						{% endif %}

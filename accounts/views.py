@@ -45,7 +45,7 @@ def register(request):
             profile.profile_picture = "default/default-user.png"
             profile.save()
 
-            """ 
+            
             # USER ACTIVATION  (ERROR, SMTPAuthenticationError (534))
             current_site = get_current_site(request)
             mail_subject = 'Please activate your account'
@@ -58,9 +58,9 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            # messages.success(request, 'Thank you for registering with us. We have sent you a verification to your email address. Please verify it.')
+            messages.success(request, 'Thank you for registering with us. We have sent you a verification to your email address. Please verify it.')
             return redirect('/accounts/login/?command=verification&email='+email) 
-            """
+            
     else:
         form = RegistrationForm()
     context = {

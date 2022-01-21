@@ -10,7 +10,10 @@ from django.db.models import Avg, Count
 class Product(models.Model):
     product_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    description = models.TextField(max_length=500, blank=True)
+    description = models.TextField(max_length=200, blank=True)
+    description1 = models.TextField(max_length=500, blank=True)
+    description2 = models.TextField(max_length=500, blank=True)
+    description3 = models.TextField(max_length=500, blank=True)
     price = models.IntegerField()
     images = models.ImageField(upload_to="photos/products")
     stock = models.IntegerField()
@@ -51,13 +54,14 @@ class VariationManager(models.Manager):
         )
 
 
-"""def sizes(self):
+variation_category_choice = (("color", "color"),)
+
+"""
+def sizes(self):
         return super(VariationManager, self).filter(
             variation_category="size", is_active=True
-        )"""
-
-
-variation_category_choice = (("color", "color"),)
+        )
+"""
 
 """ ("size", "size"),"""
 
@@ -93,7 +97,8 @@ class ReviewRating(models.Model):
 
 
 class ProductGallery(models.Model):
-    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, default=None, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="store/products", max_length=255)
 
     def __str__(self):
